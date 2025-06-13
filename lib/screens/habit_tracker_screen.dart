@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:habbit_tracker/models/habbit.dart';
-
 import 'package:habbit_tracker/widgets/progress_indicator_widget.dart';
 import 'package:habbit_tracker/utils/constants.dart';
-
 import '../Widgets/add_habbit.dart';
 import '../Widgets/habbit_list.dart';
 
 class HabitTracker extends StatefulWidget {
   const HabitTracker({super.key});
-
   @override
   State<HabitTracker> createState() => _HabitTrackerState();
 }
