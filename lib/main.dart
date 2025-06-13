@@ -89,7 +89,7 @@ class DailyHabitTrackerApp extends StatelessWidget {
           filled: true,
         ), colorScheme: ColorScheme.fromSwatch(primarySwatch: _createMaterialColor(AppConstants.primaryColor)).copyWith(background: AppConstants.backgroundColor),
       ),
-      home: ,
+      home: const HabitTracker(),
     );
   }
 
