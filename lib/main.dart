@@ -1,4 +1,3 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/habit_tracker_screen.dart';
@@ -13,7 +12,6 @@ class DailyHabitTrackerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Set system UI overlay style
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: AppConstants.primaryColor,
@@ -27,13 +25,8 @@ class DailyHabitTrackerApp extends StatelessWidget {
       title: AppConstants.appTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // Primary colors
         primaryColor: AppConstants.primaryColor,
-        
-        // Background colors
         scaffoldBackgroundColor: AppConstants.backgroundColor,
-        
-        // Card theme
         cardTheme: CardTheme(
           color: AppConstants.cardColor,
           elevation: 2,
@@ -41,8 +34,7 @@ class DailyHabitTrackerApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppConstants.cardBorderRadius),
           ),
         ),
-        
-        // AppBar theme
+
         appBarTheme: const AppBarTheme(
           backgroundColor: AppConstants.primaryColor,
           foregroundColor: Colors.white,
@@ -54,22 +46,12 @@ class DailyHabitTrackerApp extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        
-        // FloatingActionButton theme
-        floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: AppConstants.primaryColor,
-          foregroundColor: Colors.white,
-          elevation: 4,
-        ),
-        
-        // Text theme
+
         textTheme: const TextTheme(
           displayLarge: AppConstants.titleStyle,
           titleLarge: AppConstants.subtitleStyle,
           bodyMedium: AppConstants.bodyStyle,
         ),
-        
-        // Input decoration theme
         inputDecorationTheme: InputDecorationTheme(
                     border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppConstants.buttonBorderRadius),
@@ -116,6 +98,3 @@ class DailyHabitTrackerApp extends StatelessWidget {
     return MaterialColor(color.value, swatch);
   }
 }
-
-
-        

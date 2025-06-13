@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:habbit_tracker/utils/constants.dart';
 
-class ProgressIndicatorWidget extends StatelessWidget{
+class ProgressIndicatorWidget extends StatelessWidget {
   final int completedHabits;
   final int totalHabits;
 
   const ProgressIndicatorWidget({
-    Key?key,
+    super.key,
     required this.completedHabits,
     required this.totalHabits,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context){
