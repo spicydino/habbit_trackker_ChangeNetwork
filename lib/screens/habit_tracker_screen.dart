@@ -13,7 +13,6 @@ class HabitTracker extends StatefulWidget {
 
 class _HabitTrackerState extends State<HabitTracker> {
   List<Habit> _habits = [];
-  int _selectedIndex = 1;
 
   @override
   void initState() {
@@ -105,10 +104,6 @@ class _HabitTrackerState extends State<HabitTracker> {
     return Scaffold(
       backgroundColor: AppConstants.backgroundColor,
       appBar: AppBar(
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back_ios, color: AppConstants.textPrimary),
-        //   onPressed: () {},
-        // ),
         title: const Text(
           'Daily Habits',
           style: TextStyle(
@@ -124,7 +119,6 @@ class _HabitTrackerState extends State<HabitTracker> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // White container for content
           Expanded(
             child: Container(
               color: Colors.white,
@@ -239,32 +233,6 @@ class _HabitTrackerState extends State<HabitTracker> {
           ),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _selectedIndex,
-      //   onTap: (index) {
-      //     setState(() {
-      //       _selectedIndex = index;
-      //     });
-      //   },
-      //   type: BottomNavigationBarType.fixed,
-      //   backgroundColor: Colors.white,
-      //   selectedItemColor: AppConstants.primaryColor,
-      //   unselectedItemColor: AppConstants.textSecondary,
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home_outlined),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.format_list_bulleted),
-      //       label: 'Habits',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person_outline),
-      //       label: 'Profile',
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
