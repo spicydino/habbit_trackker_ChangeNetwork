@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class Habit {
@@ -7,19 +6,14 @@ class Habit {
   String subtitle;
   IconData icon;
   bool isCompleted;
-  DateTime createdAt;
+
   Habit({
     required this.id,
     required this.title,
     required this.subtitle,
     required this.icon,
     required this.isCompleted,
-    required this.createdAt,
   });
-  
-  
-
-  
 
   Habit copyWith({
     String? id,
@@ -35,7 +29,6 @@ class Habit {
       subtitle: subtitle ?? this.subtitle,
       icon: icon ?? this.icon,
       isCompleted: isCompleted ?? this.isCompleted,
-      createdAt: createdAt ?? this.createdAt,
     );
   }
 
@@ -50,7 +43,6 @@ class Habit {
       'subtitle': subtitle,
       'icon': icon.codePoint,
       'isCompleted': isCompleted,
-      'createdAt': createdAt.millisecondsSinceEpoch,
     };
   }
 
@@ -61,13 +53,12 @@ class Habit {
       subtitle: map['subtitle'] as String,
       icon: IconData(map['icon'] as int, fontFamily: 'MaterialIcons'),
       isCompleted: map['isCompleted'] as bool,
-      createdAt: DateTime.fromMillisecondsSinceEpoch(map['createdAt'] as int),
     );
   }
 
   @override
   String toString() {
-    return 'Habit(id: $id, title: $title, subtitle: $subtitle, icon: $icon, isCompleted: $isCompleted, createdAt: $createdAt)';
+    return 'Habit(id: $id, title: $title, subtitle: $subtitle, icon: $icon, isCompleted: $isCompleted)';
   }
 
   @override
@@ -79,8 +70,7 @@ class Habit {
       other.title == title &&
       other.subtitle == subtitle &&
       other.icon == icon &&
-      other.isCompleted == isCompleted &&
-      other.createdAt == createdAt;
+      other.isCompleted == isCompleted;
   }
 
   @override
@@ -89,7 +79,6 @@ class Habit {
       title.hashCode ^
       subtitle.hashCode ^
       icon.hashCode ^
-      isCompleted.hashCode ^
-      createdAt.hashCode;
+      isCompleted.hashCode ;
   }
   }

@@ -29,7 +29,6 @@ class _HabitTrackerState extends State<HabitTracker> {
       subtitle: habitData['subtitle'],
       icon: habitData['icon'],
       isCompleted: false,
-      createdAt: DateTime.now(),
     ))
         .toList();
   }
@@ -48,7 +47,6 @@ class _HabitTrackerState extends State<HabitTracker> {
         subtitle: subtitle,
         icon: Icons.flag_outlined,
         isCompleted: false,
-        createdAt: DateTime.now(),
       ));
     });
   }

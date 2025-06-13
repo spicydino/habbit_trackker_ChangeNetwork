@@ -1,4 +1,3 @@
-// widgets/habit_list_item.dart
 import 'package:flutter/material.dart';
 import '../models/habbit.dart';
 import '../utils/constants.dart';
@@ -9,11 +8,11 @@ class HabitListItem extends StatelessWidget {
   final bool showCheckbox;
 
   const HabitListItem({
-    Key? key,
+    super.key,
     required this.habit,
     required this.onToggle,
     this.showCheckbox = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
