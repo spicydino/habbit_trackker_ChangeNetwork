@@ -41,6 +41,10 @@ class Habit {
     );
   }
 
+  void toggleCompletion() {
+    isCompleted = !isCompleted;
+  }
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
