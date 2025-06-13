@@ -40,16 +40,22 @@ class _HabitTrackerState extends State<HabitTracker> {
     });
   }
 
-  void _addHabit(String title) {
+  void _addHabit(String title, String subtitle) {
     setState(() {
       _habits.add(Habit(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
         title: title,
-        subtitle: 'Custom habit',
+        subtitle: subtitle,
         icon: Icons.flag_outlined,
         isCompleted: false,
         createdAt: DateTime.now(),
       ));
+    });
+  }
+
+  void _clearCompletedHabits() {
+    setState(() {
+      _habits.removeWhere((habit) => habit.isCompleted);
     });
   }
 
@@ -60,7 +66,11 @@ class _HabitTrackerState extends State<HabitTracker> {
     );
 
     if (result != null && result.isNotEmpty) {
-      _addHabit(result);
+      final parts = result.split(' ');
+      final title = parts.isNotEmpty ? parts[0] : '';
+      final subtitle = parts.length > 1 ? parts.sublist(1).join(' ') : '';
+
+      _addHabit(title, subtitle);
     }
   }
 
@@ -167,42 +177,28 @@ class _HabitTrackerState extends State<HabitTracker> {
                     padding: const EdgeInsets.all(16),
                     child: Column(
                       children: [
-                        // Container(
-                        //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                        //   decoration: BoxDecoration(
-                        //     color: AppConstants.backgroundColor,
-                        //     borderRadius: BorderRadius.circular(8),
-                        //   ),
-                        //   child: Row(
-                        //     children: [
-                        //       const Text(
-                        //         'What',
-                        //         style: TextStyle(
-                        //           fontSize: 16,
-                        //           color: AppConstants.textSecondary,
-                        //         ),
-                        //       ),
-                        //       const SizedBox(width: 8),
-                        //       Expanded(
-                        //         child: TextField(
-                        //           decoration: const InputDecoration(
-                        //             hintText: 'habit do you want to build?',
-                        //             hintStyle: TextStyle(
-                        //               color: AppConstants.textSecondary,
-                        //             ),
-                        //             border: InputBorder.none,
-                        //           ),
-                        //           onSubmitted: (value) {
-                        //             if (value.isNotEmpty) {
-                        //               _addHabit(value);
-                        //             }
-                        //           },
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // const SizedBox(height: 16),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: _clearCompletedHabits,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            child: const Text(
+                              'Clear Completed',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(

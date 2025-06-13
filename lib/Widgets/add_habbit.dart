@@ -11,12 +11,14 @@ class AddHabitDialog extends StatefulWidget {
 
 class _AddHabitDialogState extends State<AddHabitDialog> {
   final TextEditingController _textController = TextEditingController();
+  final TextEditingController _textController2 = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
   @override
   void dispose() {
     _textController.dispose();
+    _textController2.dispose();
     super.dispose();
   }
 
@@ -64,6 +66,39 @@ class _AddHabitDialogState extends State<AddHabitDialog> {
               validator: _validateHabit,
               onChanged: (value) {
                 setState(() {}); 
+              },
+              onFieldSubmitted: (_) => _submitHabit(),
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              controller: _textController2,
+              decoration: InputDecoration(
+                hintText: "Enter a description",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(
+                    AppConstants.buttonBorderRadius,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(
+                    AppConstants.buttonBorderRadius,
+                  ),
+                  borderSide: const BorderSide(
+                    color: AppConstants.primaryColor,
+                    width: 2,
+                  ),
+                ),
+                prefixIcon: const Icon(
+                  Icons.description,
+                  color: AppConstants.primaryColor,
+                ),
+                counterText: '${_textController2.text.length}/${AppConstants.maxHabitLength}',
+              ),
+              maxLength: AppConstants.maxHabitLength,
+              textCapitalization: TextCapitalization.sentences,
+              validator: _validateHabit,
+              onChanged: (value) {
+                setState(() {});
               },
               onFieldSubmitted: (_) => _submitHabit(),
             ),
@@ -124,9 +159,12 @@ class _AddHabitDialogState extends State<AddHabitDialog> {
       await Future.delayed(const Duration(milliseconds: 300));
 
       final habitTitle = _textController.text.trim();
+      final habitDescription = _textController2.text.trim();
+
+      final habit = "$habitTitle $habitDescription";
       
       if (mounted) {
-        Navigator.of(context).pop(habitTitle);
+        Navigator.of(context).pop(habit);
       }
     }
   }
