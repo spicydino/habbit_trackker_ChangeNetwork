@@ -1,6 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 class Habit {
@@ -67,10 +65,6 @@ class Habit {
     );
   }
 
-  // String toJson() => json.encode(toMap());
-
-  // factory Habit.fromJson(String source) => Habit.fromMap(json.decode(source) as Map<String, dynamic>);
-
   @override
   String toString() {
     return 'Habit(id: $id, title: $title, subtitle: $subtitle, icon: $icon, isCompleted: $isCompleted, createdAt: $createdAt)';
@@ -99,4 +93,3 @@ class Habit {
       createdAt.hashCode;
   }
   }
- 
