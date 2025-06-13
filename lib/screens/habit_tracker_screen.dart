@@ -105,14 +105,14 @@ class _HabitTrackerState extends State<HabitTracker> {
     return Scaffold(
       backgroundColor: AppConstants.backgroundColor,
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: AppConstants.textPrimary),
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios, color: AppConstants.textPrimary),
+        //   onPressed: () {},
+        // ),
         title: const Text(
           'Daily Habits',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 28,
             fontWeight: FontWeight.w600,
             color: AppConstants.textPrimary,
           ),
@@ -173,42 +173,42 @@ class _HabitTrackerState extends State<HabitTracker> {
                     padding: const EdgeInsets.all(16),
                     child: Column(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                          decoration: BoxDecoration(
-                            color: AppConstants.backgroundColor,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            children: [
-                              const Text(
-                                'What',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: AppConstants.textSecondary,
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: TextField(
-                                  decoration: const InputDecoration(
-                                    hintText: 'habit do you want to build?',
-                                    hintStyle: TextStyle(
-                                      color: AppConstants.textSecondary,
-                                    ),
-                                    border: InputBorder.none,
-                                  ),
-                                  onSubmitted: (value) {
-                                    if (value.isNotEmpty) {
-                                      _addHabit(value);
-                                    }
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 16),
+                        // Container(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        //   decoration: BoxDecoration(
+                        //     color: AppConstants.backgroundColor,
+                        //     borderRadius: BorderRadius.circular(8),
+                        //   ),
+                        //   child: Row(
+                        //     children: [
+                        //       const Text(
+                        //         'What',
+                        //         style: TextStyle(
+                        //           fontSize: 16,
+                        //           color: AppConstants.textSecondary,
+                        //         ),
+                        //       ),
+                        //       const SizedBox(width: 8),
+                        //       Expanded(
+                        //         child: TextField(
+                        //           decoration: const InputDecoration(
+                        //             hintText: 'habit do you want to build?',
+                        //             hintStyle: TextStyle(
+                        //               color: AppConstants.textSecondary,
+                        //             ),
+                        //             border: InputBorder.none,
+                        //           ),
+                        //           onSubmitted: (value) {
+                        //             if (value.isNotEmpty) {
+                        //               _addHabit(value);
+                        //             }
+                        //           },
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // const SizedBox(height: 16),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -239,32 +239,32 @@ class _HabitTrackerState extends State<HabitTracker> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: AppConstants.primaryColor,
-        unselectedItemColor: AppConstants.textSecondary,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.format_list_bulleted),
-            label: 'Habits',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _selectedIndex,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _selectedIndex = index;
+      //     });
+      //   },
+      //   type: BottomNavigationBarType.fixed,
+      //   backgroundColor: Colors.white,
+      //   selectedItemColor: AppConstants.primaryColor,
+      //   unselectedItemColor: AppConstants.textSecondary,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home_outlined),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.format_list_bulleted),
+      //       label: 'Habits',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person_outline),
+      //       label: 'Profile',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
