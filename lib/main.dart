@@ -8,7 +8,7 @@ void main() {
 }
 
 class DailyHabitTrackerApp extends StatelessWidget {
-  const DailyHabitTrackerApp({Key? key}) : super(key: key);
+  const DailyHabitTrackerApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class DailyHabitTrackerApp extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           fillColor: Colors.white,
           filled: true,
-        ), colorScheme: ColorScheme.fromSwatch(primarySwatch: _createMaterialColor(AppConstants.primaryColor)).copyWith(background: AppConstants.backgroundColor),
+        ), colorScheme: ColorScheme.fromSwatch(primarySwatch: _createMaterialColor(AppConstants.primaryColor)).copyWith(surface: AppConstants.backgroundColor),
       ),
       home: const HabitTracker(),
     );

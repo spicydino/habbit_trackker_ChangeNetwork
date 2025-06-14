@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 
 class AddHabitDialog extends StatefulWidget {
-  const AddHabitDialog({Key? key}) : super(key: key);
+  const AddHabitDialog({super.key});
 
   @override
   State<AddHabitDialog> createState() => _AddHabitDialogState();
